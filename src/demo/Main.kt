@@ -1,5 +1,7 @@
 package demo
 
+import java.awt.Rectangle
+
 
 fun sum(a: Int, b: Int): Int{
 
@@ -109,6 +111,14 @@ fun main(args : Array<String>){
     for (x in 9 downTo 0 step 3){
         println(x)
     }
+
+
+    list.filter { it.startsWith("a") }
+            .sortedBy { it }
+            .map { it.toUpperCase() }
+            .forEach { println(it) }
+
+    val rectangle = Rectangle(3, 4, 5, 6)
 
 
 }
