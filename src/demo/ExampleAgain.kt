@@ -5,6 +5,14 @@ fun defaultVal(x: Any = "123") {
     println(x)
 }
 
+
+class Turtle {
+    fun penDown() {}
+    fun penUp() {}
+    fun turn(degrees: Double) {}
+    fun forward(pixels: Double) {}
+}
+
 fun main(args: Array<String>) {
 
     defaultVal()
@@ -33,5 +41,20 @@ fun main(args: Array<String>) {
     println("Convert this to camel case".spaceToCamelCase())
     val string1 = "String"
     println(string1.spaceToCamelCase())
+
+    val emails = emptyList<String>()
+
+    val getEmails = emails.firstOrNull() ?: "Was not found"
+    println(getEmails)
+
+    val myTurtle = Turtle()
+    with(myTurtle) { //draw a 100 pix square
+        penDown()
+        for(i in 1..4) {
+            forward(100.0)
+            turn(90.0)
+        }
+        penUp()
+    }
 
 }
