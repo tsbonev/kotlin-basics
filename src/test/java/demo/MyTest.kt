@@ -16,7 +16,7 @@ class MyTest{
     val context: JUnitRuleMockery = JUnitRuleMockery()
 
     private fun Mockery.expecting(block: Expectations.() -> Unit){
-        this.checking(Expectations().apply(block))
+        checking(Expectations().apply(block))
     }
 
     val human: Human = context.mock(Human::class.java)
@@ -46,7 +46,7 @@ class MyTest{
             will(returnValue(1))
         }
 
-        for (i in 1 until 5 step 1) assert(makeMeLive(human) == 1)
+        for (i in 1 until 6 step 1) assert(makeMeLive(human) == 1)
     }
 
 }
